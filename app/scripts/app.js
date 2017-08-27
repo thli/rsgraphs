@@ -13,23 +13,26 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    $stateProvider
+      .state('dashboard', {
+        url: '/',
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        controllerAs: 'dashCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
+      .state('graph', {
+        url: '/graph',
+        templateUrl: 'views/graph.html',
+        controller: 'GraphCtrl',
+        controllerAs: 'graphCtrl'
       });
-  });
+
+    $urlRouterProvider.otherwise('/');
+  }]);

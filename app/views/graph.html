@@ -1,0 +1,21 @@
+<div class="row" ng-if="graphCtrl.item">
+  <div class="col-xs-12 col-sm-2">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3 ng-bind="graphCtrl.item.name"></h3>
+        <ul class="list-group">
+          <li id="buy-price" class="list-group-item" ng-bind="graphCtrl.item.buyPrice">Buy Price</li>
+          <li id="sell-price" class="list-group-item" ng-bind="graphCtrl.item.sellPrice">Sell Price</li>
+          <li id="volume" class="list-group-item" ng-bind="graphCtrl.item.volume">Volume</li>
+          <li id="buy-volume" class="list-group-item" ng-bind="graphCtrl.item.buyVolume">Buy Vol</li>
+          <li id="sell-volume" class="list-group-item" ng-bind="graphCtrl.item.sellVolume">Sell Vol</li>
+          <li id="5-period" class="list-group-item">5 Period</li>
+          <li id="20-period" class="list-group-item">20 Period</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-10">
+
+  </div>
+</div>
