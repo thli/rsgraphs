@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'chart.js'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -28,7 +29,7 @@ angular
         controllerAs: 'dashCtrl'
       })
       .state('graph', {
-        url: '/graph',
+        url: '/graph/:id',
         templateUrl: 'views/graph.html',
         controller: 'GraphCtrl',
         controllerAs: 'graphCtrl'
