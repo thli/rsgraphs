@@ -18,7 +18,7 @@
           item:itemID
         }
       };
-      return $http.get('http://cors-anywhere.herokuapp.com/https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json', config);
+      return $http.get('https://cors-anywhere.herokuapp.com/https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json', config);
     }
 
     function getPrices(itemID) {
@@ -31,11 +31,11 @@
         }
       };
 
-      return $http.get('http://cors-anywhere.herokuapp.com/https://api.rsbuddy.com/grandExchange', config);
+      return $http.get('https://cors-anywhere.herokuapp.com/https://api.rsbuddy.com/grandExchange', config);
     }
 
     function getAllItems() {
-      return $http.get('http://cors-anywhere.herokuapp.com/https://rsbuddy.com/exchange/summary.json');
+      return $http.get('https://cors-anywhere.herokuapp.com/https://rsbuddy.com/exchange/summary.json');
     }
   }
 })();
