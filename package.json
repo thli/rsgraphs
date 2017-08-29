@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "connect-modrewrite": "^0.10.1",
+    "cors-anywhere": "^0.4.0",
     "express": "^4.15.4",
     "gzippo": "^0.2.0",
     "morgan": "^1.8.2"

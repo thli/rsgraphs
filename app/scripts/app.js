@@ -19,7 +19,8 @@ angular
     'chart.js',
     'ui.select'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$sceDelegateProvider','$stateProvider', '$urlRouterProvider', '$locationProvider', function ($sceDelegateProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist(['**']);
     $locationProvider.html5Mode(true);
 
     $stateProvider
