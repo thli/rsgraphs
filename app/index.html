@@ -55,7 +55,7 @@
                            theme="bootstrap"
                            title="Choose an item"
                            on-select="$state.go('graph',{id: selectedItem.id})">
-                  <ui-select-match placeholder="Search for an item..."><span ng-if="$select.selected.name" ng-bind="$select.selected.name"></span></ui-select-match>
+                  <ui-select-match placeholder="Search for an item..."><span ng-if="selectedItem" ng-bind="selectedItem.name"></span></ui-select-match>
                   <ui-select-choices repeat="item in allItemsList | filter : $select.search | limitTo : 10" refresh-delay="300">
                     <div>
                       <img class="" ng-src="{{item.icon}}" alt="...">
