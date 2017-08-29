@@ -16,7 +16,8 @@ angular
     'ui.router',
     'ngSanitize',
     'ngTouch',
-    'chart.js'
+    'chart.js',
+    'ui.select'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -36,4 +37,19 @@ angular
       });
 
     $urlRouterProvider.otherwise('/');
+  }])
+  .run(['$rootScope','$state','$stateParams','RSUtils', function ($rootScope, $state, $stateParams, RSUtils) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+
+    $rootScope.allItemsList = [];
+    RSUtils.getAllItems().then(function(response) {
+      for(var id in response.data) {
+        var item = response.data[id];
+        angular.extend(item, {
+          icon: "http://services.runescape.com/m=itemdb_oldschool/1504002634353_obj_sprite.gif?id=" + id
+        });
+        $rootScope.allItemsList.push(item);
+      }
+    });
   }]);

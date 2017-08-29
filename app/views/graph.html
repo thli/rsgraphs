@@ -2,19 +2,16 @@
   <div class="col-xs-12 col-sm-2">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h3 ng-bind="graphCtrl.item.name"></h3>
-        <img ng-src="{{graphCtrl.item.icon}}">
-        <span ng-bind="graphCtrl.item.description"></span>
-        <ul class="list-group">
-          <li id="buy-price" class="list-group-item" ng-bind="graphCtrl.buyPrice[graphCtrl.buyPrice.length - 1]"></li>
-          <li id="sell-price" class="list-group-item" ng-bind="graphCtrl.sellPrice[graphCtrl.sellPrice.length - 1]"></li>
-          <li id="volume" class="list-group-item">Volume</li>
-          <li id="buy-volume" class="list-group-item" ng-bind="graphCtrl.buyVolume[graphCtrl.buyVolume.length - 1]">Buy Vol</li>
-          <li id="sell-volume" class="list-group-item" ng-bind="graphCtrl.sellVolume[graphCtrl.sellVolume.length - 1]">Sell Vol</li>
-          <li id="5-period" class="list-group-item">5 Period</li>
-          <li id="20-period" class="list-group-item">20 Period</li>
-        </ul>
+        <h4 class="rs-boldFont text-center" ng-bind="graphCtrl.item.name"></h4>
+        <img class="center-block" ng-src="{{graphCtrl.item.icon_large}}">
+        <p class="text-center" ng-bind="graphCtrl.item.description"></p>
       </div>
+      <ul class="list-group">
+        <li id="buy-price" class="list-group-item" ng-bind="'Buy Price: ' + (graphCtrl.buyPrice[graphCtrl.buyPrice.length - 1] | number : 0)"></li>
+        <li id="sell-price" class="list-group-item" ng-bind="'Sell Price: ' + (graphCtrl.sellPrice[graphCtrl.sellPrice.length - 1] | number : 0)"></li>
+        <li id="buy-volume" class="list-group-item" ng-bind="'Buy Volume: ' + (graphCtrl.buyVolume[graphCtrl.buyVolume.length - 1] | number : 0)"></li>
+        <li id="sell-volume" class="list-group-item" ng-bind="'Sell Volume: ' + (graphCtrl.sellVolume[graphCtrl.sellVolume.length - 1] | number : 0)"></li>
+      </ul>
     </div>
   </div>
   <div class="col-xs-12 col-sm-9">

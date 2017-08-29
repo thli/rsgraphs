@@ -9,6 +9,7 @@
 
     function onload() {
       var id = $stateParams.id;
+
       RSUtils.getInfo(id).then(function(response) {
         vm.item = response.data.item;
       });

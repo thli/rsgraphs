@@ -8,7 +8,8 @@
   function RSUtilsFactory($http) {
     return {
       getInfo : getInfo,
-      getPrices: getPrices
+      getPrices: getPrices,
+      getAllItems: getAllItems
     };
 
     function getInfo(itemID) {
@@ -26,13 +27,15 @@
           a:'graph',
           i:itemID,
           g:30,
-          start: moment().subtract(1, 'weeks').valueOf()
+          start: moment().subtract(3, 'weeks').valueOf()
         }
       };
 
-      console.log(config.params.start);
       return $http.get('https://api.rsbuddy.com/grandExchange', config);
     }
 
+    function getAllItems() {
+      return $http.get('https://rsbuddy.com/exchange/summary.json');
+    }
   }
 })();
