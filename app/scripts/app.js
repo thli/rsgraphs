@@ -48,7 +48,7 @@ angular
       for(var id in response.data) {
         var item = response.data[id];
         angular.extend(item, {
-          icon: "http://services.runescape.com/m=itemdb_oldschool/1504002634353_obj_sprite.gif?id=" + id
+          icon: "https://services.runescape.com/m=itemdb_oldschool/1504002634353_obj_sprite.gif?id=" + id
         });
         $rootScope.allItemsList.push(item);
       }

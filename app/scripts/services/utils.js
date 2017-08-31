@@ -27,7 +27,7 @@
           a:'graph',
           i:itemID,
           g:30,
-          start: moment().subtract(3, 'weeks').valueOf()
+          start: moment().subtract(4, 'weekxs').valueOf()
         }
       };
 

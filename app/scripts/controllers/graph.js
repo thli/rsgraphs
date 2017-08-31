@@ -16,7 +16,7 @@
 
       RSUtils.getPrices(id).then(function(response) {
         vm.data = response.data;
-        vm.timestamps = vm.data.map(function(data) {
+        vm.dates = vm.data.map(function(data) {
           return $filter('date')((data.ts), 'MMM dd - h:mm a');
         });
 
@@ -41,9 +41,10 @@
 
         vm.series = ['Buy Price', 'Sell Price'];
         vm.chartData = [vm.buyPrice, vm.sellPrice];
-
-        console.log(vm.series);
-        console.log(vm.chartData);
+        vm.timestamps = angular.copy(vm.dates);
+        vm.dateRange = vm.buyPrice.length;
+//        console.log(vm.series);
+//        console.log(vm.chartData);
 
         vm.options = {
           spanGaps: true,
@@ -63,5 +64,31 @@
 
     onload();
 
+    vm.isNotUndefined = function(value, index, array) {
+      return value!==undefined;
+    };
+
+    vm.logData = function() {
+      console.log(vm.chartData);
+    };
+
+
+    vm.updateData = function(periods) {
+      console.log('updating data range to : ' + periods);
+
+      if(periods === 0) {
+        vm.chartData = [vm.buyPrice, vm.sellPrice];
+        vm.timestamps = angular.copy(vm.dates);
+      } else {
+        vm.chartData = [
+          $filter('limitTo')(vm.buyPrice, periods),
+          $filter('limitTo')(vm.sellPrice, periods)
+        ];
+
+        vm.timestamps = $filter('limitTo')(angular.copy(vm.dates), periods);
+      }
+
+      console.log(vm.chartData);
+    };
   }
 })();

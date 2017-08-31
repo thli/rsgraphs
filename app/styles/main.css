@@ -26,6 +26,10 @@
   padding-left: 10px;
 }
 
+.rs-pad-left-15 {
+  padding-left: 15px;
+}
+
 .rs-pad-left-20 {
   padding-left: 20px;
 }
@@ -42,11 +46,15 @@
   padding-right: 10px;
 }
 
-.rs-pad-left-20 {
+.rs-pad-right-15 {
+  padding-right: 15px;
+}
+
+.rs-pad-right-20 {
   padding-right: 20px;
 }
 
-.rs-pad-left-30 {
+.rs-pad-right-30 {
   padding-right: 30px;
 }
 
@@ -56,6 +64,10 @@
 
 .rs-pad-top-10 {
   padding-top: 10px;
+}
+
+.rs-pad-top-15 {
+  padding-top: 15px;
 }
 
 .rs-pad-top-20 {
@@ -72,6 +84,10 @@
 
 .rs-pad-bot-10 {
   padding-bottom: 10px;
+}
+
+.rs-pad-bot-15 {
+  padding-bottom: 15px;
 }
 
 .rs-pad-bot-20 {
